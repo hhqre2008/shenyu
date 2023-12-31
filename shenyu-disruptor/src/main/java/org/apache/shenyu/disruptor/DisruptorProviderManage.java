@@ -104,7 +104,7 @@ public class DisruptorProviderManage<T> {
      *
      * @param isOrderly the orderly Whether to execute sequentially.
      */
-    public void startup(final boolean isOrderly) {
+    public void  startup(final boolean isOrderly) {
         OrderlyExecutor executor = new OrderlyExecutor(isOrderly, consumerSize, consumerSize, 0, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<>(),
                 DisruptorThreadFactory.create("shenyu_disruptor_consumer_", false), new ThreadPoolExecutor.AbortPolicy());

@@ -29,6 +29,8 @@ public class OrderDTO implements Serializable {
 
     private String name;
 
+    private String ipAddress;
+
     /**
      * Get id.
      *
@@ -65,11 +67,30 @@ public class OrderDTO implements Serializable {
         this.name = name;
     }
 
+    /**
+     * Get ipAddress.
+     *
+     * @return ipAddress
+     */
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    /**
+     * Set ipAddress.
+     *
+     * @param ipAddress ipAddress
+     */
+    public void setIpAddress(final String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", OrderDTO.class.getSimpleName() + "[", "]")
-                .add("id='" + id + "'")
-                .add("name='" + name + "'")
-                .toString();
+            .add("id='" + id + "'")
+            .add("name='" + name + "'")
+            .add("ipAddress='" + ipAddress + "'")
+            .toString();
     }
 }

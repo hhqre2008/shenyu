@@ -19,7 +19,7 @@ server:
 
 spring:
   profiles:
-    active: h2
+    active: mysql
   thymeleaf:
     cache: true
     encoding: utf-8
@@ -63,7 +63,8 @@ shenyu:
     websocket:
       enabled: true
       messageMaxSize: 10240
-      allowOrigins: ws://localhost:9095;ws://localhost:9195;
+      allowOrigins: ws://localhost:9095;
+#      allowOrigins: ws://localhost:9095;ws://localhost:9195;
 #    apollo:
 #      meta: http://localhost:8080
 #      appId: shenyu
@@ -97,16 +98,16 @@ shenyu:
 #      url: http://localhost:2379
 #    consul:
 #      url: http://localhost:8500
-  ldap:
-    enabled: false
-    url: ldap://xxxx:xxx
-    bind-dn: cn=xxx,dc=xxx,dc=xxx
-    password: xxxx
-    base-dn: ou=xxx,dc=xxx,dc=xxx
-    object-class: person
-    login-field: cn
-  jwt:
-    expired-seconds: 86400000
+#  ldap:
+#    enabled: false
+#    url: ldap://xxxx:xxx
+#    bind-dn: cn=xxx,dc=xxx,dc=xxx
+#    password: xxxx
+#    base-dn: ou=xxx,dc=xxx,dc=xxx
+#    object-class: person
+#    login-field: cn
+#  jwt:
+#    expired-seconds: 86400000
   shiro:
     white-list:
       - /
@@ -150,3 +151,5 @@ logging:
     org.apache.shenyu.bonuspoint: info
     org.apache.shenyu.lottery: info
     org.apache.shenyu: info
+    org.apache.shenyu.admin.mapper.*: DEBUG
+

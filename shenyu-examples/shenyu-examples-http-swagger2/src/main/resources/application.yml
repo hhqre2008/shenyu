@@ -25,7 +25,7 @@ shenyu:
     serverLists: http://127.0.0.1:9095 #localhost:2181 #http://localhost:2379 #localhost:8848
     props:
       username: admin
-      password: 123456
+      password: 921029238eS!
   client:
       http:
         props:

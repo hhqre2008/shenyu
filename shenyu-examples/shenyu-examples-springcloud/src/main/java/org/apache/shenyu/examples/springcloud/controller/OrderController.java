@@ -22,6 +22,7 @@ import org.apache.shenyu.client.apidocs.annotations.ApiModule;
 import org.apache.shenyu.client.springcloud.annotation.ShenyuGetMapping;
 import org.apache.shenyu.client.springcloud.annotation.ShenyuPostMapping;
 import org.apache.shenyu.client.springcloud.annotation.ShenyuRequestMapping;
+import org.apache.shenyu.common.utils.IpUtils;
 import org.apache.shenyu.examples.springcloud.dto.OrderDTO;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -90,6 +91,7 @@ public class OrderController {
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setId(id);
         orderDTO.setName(name);
+        orderDTO.setIpAddress(IpUtils.getHost());
         return orderDTO;
     }
 }
